@@ -9,7 +9,7 @@ import uuid
 
 
 # Configure Google Generative AI
-genai.configure(api_key="AIzaSyAZ9x6ig-GikTC8Lf0hYFkBH_zjCZcBT64")
+genai.configure(api_key="AIzaSyCgJuv5bLLHqcnqDzREby7Ou-iNs3Nx3UQ")
 
 # Load your trained model
 model = tf.keras.models.load_model('trained_model.keras')
@@ -85,7 +85,7 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png
 def fetch_prevention_and_treatments(disease_name):
     """Fetch prevention and treatments from Google Gemini AI."""
     prompt = f"What are the prevention and treatment methods for {disease_name} in plants?"
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)
     return response.text
 
